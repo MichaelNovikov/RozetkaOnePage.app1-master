@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:control="clr-namespace:RozetkaOnePage.app.CustomControls"
+             x:Class="RozetkaOnePage.app.Views.SearchView">
+    <ContentPage.Content>
+        <StackLayout
+            Orientation="Vertical"
+            BackgroundColor="#00A046">
+            <StackLayout
+            Orientation="Horizontal">
+                <Label
+                Text="ROZETKA" 
+                Margin="60,0,0,0"
+                TextColor="White"
+                FontSize="Large"
+                VerticalOptions="StartAndExpand"
+                HorizontalOptions="CenterAndExpand"/>
+                <Image
+                Source="cart32w"
+                Margin="0,0,15,0"
+                VerticalOptions="StartAndExpand"
+                HorizontalOptions="End"
+                Scale="0.8"/>
+            </StackLayout>
+            <Frame
+                Margin="15,5,15,15"
+                Padding="0"
+                BackgroundColor="White"
+                CornerRadius="14">
+                <control:CustomSearchBar 
+                Margin="0,0,10,0"
+                Text="{Binding SearchStr, Mode=TwoWay}"
+                Placeholder="Я ищу..."
+                PlaceholderColor="Gray"
+                TextColor="Black"
+                BackgroundColor="Transparent"
+                HorizontalOptions="FillAndExpand"/>
+            </Frame>
+            <ListView
+                ItemsSource="{Binding ProductsFound}"
+                VerticalOptions="FillAndExpand"
+                BackgroundColor="White">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label
+                                VerticalOptions="StartAndExpand"
+                                Text="{Binding Name}"
+                                FontSize="Medium"
+                                />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RozetkaOnePage.app.Views.MasterDetailView">
+    <MasterDetailPage.Master>
+        <ContentPage
+            Title="Menu">
+            <StackLayout
+                BackgroundColor="White">
+                <Label
+                    Text="Главная"
+                    BackgroundColor="Transparent">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Command="{Binding OnNavigationCommand}"
+                        CommandParameter="NavigationPage/MainView"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label
+                    Text="Каталог"
+                    BackgroundColor="Transparent">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Command="{Binding OnNavigationCommand}" 
+                        CommandParameter="NavigationPage/Page1"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>
