@@ -8,33 +8,38 @@
             Orientation="Vertical"
             BackgroundColor="#00A046">
             <StackLayout
-            Orientation="Horizontal">
+                Orientation="Horizontal"
+                Margin="0,7,0,0">
                 <Label
-                Text="ROZETKA" 
-                Margin="60,0,0,0"
+            Text="ROZETKA" 
+                Margin="60,5,0,0"
                 TextColor="White"
-                FontSize="Large"
+                FontAttributes="Bold"
+                FontSize="Medium"
                 VerticalOptions="StartAndExpand"
                 HorizontalOptions="CenterAndExpand"/>
                 <Image
                 Source="cart32w"
-                Margin="0,0,15,0"
+                Margin="0,0,21,0"
                 VerticalOptions="StartAndExpand"
                 HorizontalOptions="End"
                 Scale="0.8"/>
             </StackLayout>
             <Frame
-                Margin="15,5,15,15"
+                Margin="15,5,15,10"
                 Padding="0"
                 BackgroundColor="White"
-                CornerRadius="14">
+                HeightRequest="40"
+                CornerRadius="12">
                 <control:CustomSearchBar 
                 Margin="0,0,10,0"
                 Text="{Binding SearchStr, Mode=TwoWay}"
                 Placeholder="Я ищу..."
                 PlaceholderColor="Gray"
+                HeightRequest="44"
                 TextColor="Black"
                 BackgroundColor="Transparent"
+                VerticalOptions="Center"
                 HorizontalOptions="FillAndExpand"/>
             </Frame>
             <ListView

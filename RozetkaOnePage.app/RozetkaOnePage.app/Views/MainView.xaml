@@ -4,6 +4,7 @@
              x:Class="RozetkaOnePage.app.Views.MainView"
              xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
              xmlns:control="clr-namespace:RozetkaOnePage.app.CustomControls"
+             xmlns:res="clr-namespace:RozetkaOnePage.app.Helpers.Resources"
              Title="{Binding Title}"     
               x:Name="MyPage">
 
@@ -11,38 +12,50 @@
         Orientation="Vertical"
         BackgroundColor="#00A046">
         <StackLayout
-            Orientation="Horizontal">
+            Orientation="Horizontal"
+            Margin="0,7,0,0">
             <Label
                 Text="ROZETKA" 
-                Margin="60,0,0,0"
+                Margin="60,5,0,0"
                 TextColor="White"
-                FontSize="Large"
+                FontAttributes="Bold"
+                FontSize="Medium"
                 VerticalOptions="StartAndExpand"
                 HorizontalOptions="CenterAndExpand"/>
             <Image
                 Source="cart32w"
-                Margin="0,0,15,0"
+                Margin="0,0,21,0"
                 VerticalOptions="StartAndExpand"
                 HorizontalOptions="End"
                 Scale="0.8"/>
         </StackLayout>
         <Frame
-                Margin="15,5,15,15"
+                Margin="15,5,15,18"
                 Padding="0"
                 BackgroundColor="White"
-                HeightRequest="35"
-                CornerRadius="10">
+                HeightRequest="44"
+                CornerRadius="12">
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer
                         Command="{Binding TabSearchBarCommand}" />
             </Frame.GestureRecognizers>
-            <Label
+            <StackLayout
+                Orientation="Horizontal">
+                <Image
+                    Source="search"
+                    Margin="7,0,0,0"
+                    HeightRequest="16"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"/>
+                <Label
                 Text ="Я ищу..."
+                    FontSize="Medium"
                 TextColor="Gray"
                 BackgroundColor="Transparent"
-                HorizontalOptions="FillAndExpand"
+                
                 VerticalOptions="Center">
-            </Label>
+                </Label>
+            </StackLayout>
         </Frame>
 
         <flv:FlowListView
@@ -54,9 +67,10 @@
             FlowItemsSource="{Binding Products}">
 
             <flv:FlowListView.HeaderTemplate>
+                <!--Text="{res:Translate ListViewHeaderStr}"-->
                 <DataTemplate>
                     <Label
-                        Text="Популяные товары"
+                        Text="Популярные товары" 
                         Margin="12,4,0,8"
                         FontSize="Medium"
                         TextColor="#3B393A"
@@ -75,6 +89,11 @@
                             BackgroundColor="White"
                             Margin="0,0,0,-5"
                             HeightRequest="55">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer
+                                        Command="{Binding Path=BindingContext.SelectedItemCommand, Source={x:Reference Name=MyPage}}"
+                                        CommandParameter="{Binding Id}"/>
+                            </StackLayout.GestureRecognizers>
                             <Label
                                 Text="{Binding ProductCategoryGetter}"
                                 FontSize="Medium"
@@ -110,8 +129,8 @@
                                 Grid.Row="0"
                                 Grid.Column="0"
                                 Grid.ColumnSpan="2"
-                                Margin="10"
-                                HeightRequest="100"
+                                Margin="0,2,0,-8"
+                                HeightRequest="120"
                                 Source="{Binding Image}">
                             </Image>
 
@@ -164,7 +183,7 @@
                                 Grid.Row="2"
                                 Grid.Column="0"
                                 Grid.ColumnSpan="2"
-                                Margin="7,-20,0,0"
+                                Margin="7,-18,0,0"
                                 Text="{Binding Name}"
                                 TextColor="#6C8DA1"/>
                             <ContentView
@@ -192,7 +211,7 @@
                                 HorizontalOptions="StartAndExpand"
                                 CornerRadius="1">
                                 <Label
-                                    Margin="5,4,4,5"
+                                    Margin="5,4,4,8"
                                     Text="{Binding Price, StringFormat=' {0} грн'}"
                                     TextColor="#3B393A"/>
                             </Frame>

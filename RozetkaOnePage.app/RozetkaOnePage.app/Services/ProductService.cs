@@ -32,18 +32,18 @@ namespace RozetkaOnePage.app.Services
                     Feedback = new List<string>{"","","","","","","","","","","","","","","",
                         "","","","","","","","","","","","","","","","","","","","","","","",""},
                     Image = "smBlack",
-                    Price = 5499,
-                    PreviousPrice = 5199
+                    Price = 5199,
+                    PreviousPrice = 5499
                 },
                  new ProductModel
                 {
                     Name = "Планшет Asus ZenPad 3S 10 4/64GB",
                     ProductCategorySetter = ProductCategory.Tablets,
-                    ProductLabelSetter = ProductLabel.TopSales,
+                    ProductLabelSetter = ProductLabel.SuperPrice,
                     Feedback = new List<string>{"","","","","","","","","","","","","","","","","","","","","","","",""},
                     Image = "asus",
-                    Price = 9499,
-                    PreviousPrice = 8999
+                    Price = 8999,
+                    PreviousPrice = 9499
                 },              
             };
         }
