@@ -184,6 +184,7 @@
                                 Grid.Column="0"
                                 Grid.ColumnSpan="2"
                                 Margin="7,-18,0,0"
+                                HeightRequest="35"
                                 Text="{Binding Name}"
                                 TextColor="#6C8DA1"/>
                             <ContentView
